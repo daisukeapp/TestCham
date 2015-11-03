@@ -17,6 +17,31 @@ class GameScene: SKScene {
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
         self.addChild(myLabel)
+
+        // ボタンを生成.
+        let myButton = UIButton()
+        myButton.frame = CGRectMake(0,0,200,40)
+        myButton.backgroundColor = UIColor.redColor();
+        myButton.layer.masksToBounds = true
+        myButton.setTitle("Add Block", forState: UIControlState.Normal)
+        myButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        myButton.setTitle("Done", forState: UIControlState.Highlighted)
+        myButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Highlighted)
+        myButton.layer.cornerRadius = 20.0
+        myButton.layer.position = CGPoint(x: self.view!.frame.width/2, y:200)
+        myButton.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
+        view.addSubview(myButton);
+    }
+    
+    func onClickMyButton(sender : UIButton){
+        
+        let rect = SKShapeNode(rectOfSize: CGSizeMake(50, 50))
+        rect.fillColor = NSColor.redColor()
+        rect.position = CGPointMake(self.frame.midX, self.frame.midY)
+        rect.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(50, 50))
+        
+        self.addChild(rect)
+        
     }
     
     override func mouseDown(theEvent: NSEvent) {

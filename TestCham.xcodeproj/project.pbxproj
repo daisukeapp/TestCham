@@ -14,6 +14,7 @@
 		68F12C741BE8477E00B1EBAD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F12C721BE8477E00B1EBAD /* MainMenu.xib */; };
 		68F12C7F1BE8477E00B1EBAD /* TestChamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F12C7E1BE8477E00B1EBAD /* TestChamTests.swift */; };
 		68F12C8A1BE8477E00B1EBAD /* TestChamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F12C891BE8477E00B1EBAD /* TestChamUITests.swift */; };
+		68F12C9D1BE847B000B1EBAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F12C9C1BE8479700B1EBAD /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,13 @@
 			remoteGlobalIDString = 68F12C661BE8477E00B1EBAD;
 			remoteInfo = TestCham;
 		};
+		68F12C9B1BE8479700B1EBAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68F12C971BE8479700B1EBAD /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = UIKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,8 @@
 		68F12C851BE8477E00B1EBAD /* TestChamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestChamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F12C891BE8477E00B1EBAD /* TestChamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChamUITests.swift; sourceTree = "<group>"; };
 		68F12C8B1BE8477E00B1EBAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F12C971BE8479700B1EBAD /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = ../Chameleon/UIKit/UIKit.xcodeproj; sourceTree = "<group>"; };
+		68F12C9E1BE848A700B1EBAD /* UIKit-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit-BridgingHeader.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F12C9D1BE847B000B1EBAD /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +88,7 @@
 		68F12C5E1BE8477E00B1EBAD = {
 			isa = PBXGroup;
 			children = (
+				68F12C971BE8479700B1EBAD /* UIKit.xcodeproj */,
 				68F12C691BE8477E00B1EBAD /* TestCham */,
 				68F12C7D1BE8477E00B1EBAD /* TestChamTests */,
 				68F12C881BE8477E00B1EBAD /* TestChamUITests */,
@@ -103,6 +115,7 @@
 				68F12C701BE8477E00B1EBAD /* Assets.xcassets */,
 				68F12C721BE8477E00B1EBAD /* MainMenu.xib */,
 				68F12C751BE8477E00B1EBAD /* Info.plist */,
+				68F12C9E1BE848A700B1EBAD /* UIKit-BridgingHeader.h */,
 			);
 			path = TestCham;
 			sourceTree = "<group>";
@@ -123,6 +136,14 @@
 				68F12C8B1BE8477E00B1EBAD /* Info.plist */,
 			);
 			path = TestChamUITests;
+			sourceTree = "<group>";
+		};
+		68F12C981BE8479700B1EBAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68F12C9C1BE8479700B1EBAD /* UIKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +236,12 @@
 			mainGroup = 68F12C5E1BE8477E00B1EBAD;
 			productRefGroup = 68F12C681BE8477E00B1EBAD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 68F12C981BE8479700B1EBAD /* Products */;
+					ProjectRef = 68F12C971BE8479700B1EBAD /* UIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				68F12C661BE8477E00B1EBAD /* TestCham */,
@@ -223,6 +250,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		68F12C9C1BE8479700B1EBAD /* UIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKit.framework;
+			remoteRef = 68F12C9B1BE8479700B1EBAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		68F12C651BE8477E00B1EBAD /* Resources */ = {
@@ -393,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = niz.TestCham;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TestCham/UIKit-BridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -405,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = niz.TestCham;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "TestCham/UIKit-BridgingHeader.h";
 			};
 			name = Release;
 		};
